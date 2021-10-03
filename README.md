@@ -1,4 +1,4 @@
-# Analizador-Lexico
+# Analizador Sintactico
 
 ## Setup
 - git clone https://github.com/EnmanuelEstrella22/Analizador-Sintactico.git
