@@ -2,7 +2,7 @@
   "name": "analizador-sintactico",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://enmanuelestrella22.github.io/Analizador-Lexico",
+  "homepage": "http://enmanuelestrella22.github.io/Analizador-Sintactico",
   "dependencies": {
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
