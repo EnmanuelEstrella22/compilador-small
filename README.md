@@ -1,4 +1,5 @@
 # Analizador Sintactico
+ Analiza código de javaScript para verificar si hay errores de sintaxis e indicar el error y dar soluciones.
 
 ## Setup
 - git clone https://github.com/EnmanuelEstrella22/Analizador-Sintactico.git
