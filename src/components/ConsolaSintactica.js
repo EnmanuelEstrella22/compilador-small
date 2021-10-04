@@ -34,7 +34,7 @@ const ConsolaSintactica = ({ codigo }) => {
               multiline
               rows={10}
               disabled={true}
-              defaultValue={codigo ? codigo : 'No hay errores.'}
+              defaultValue={codigo}
             />
           </div>
         </div>
