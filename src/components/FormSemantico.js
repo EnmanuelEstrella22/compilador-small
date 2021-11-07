@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { Box, TextField, Button } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
-import getIdentifier from '../helpers/getIdentifier';
-import getIdentifierCodigoIntermedio from '../helpers/getIdentifierCodigoIntermedio';
-import getIdentifierLexico from '../helpers/getIdentifierLexico';
+import getIdentifierSemantico from '../helpers/getIdentifierSemantico';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -24,32 +22,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Form = ({ setData, setDataConvert, setDataConvertLexico }) => {
+const FormSemantico = ({ setDataConvertSemantica }) => {
   const classes = useStyles();
   const [codigo, setCodigo] = useState('');
-
-  const getResult = () => {
-    const convertCode = getIdentifierCodigoIntermedio(codigo);
-    setData(convertCode);
-    setDataConvert(getIdentifier(convertCode));
-    setDataConvertLexico(getIdentifierLexico(convertCode));
-  };
 
   return (
     <>
       <Box display="flex" justifyContent="center" alignItems="center">
         <div>
-          <h1 style={{ textTransform: 'uppercase' }}>pequeño Compilador</h1>
-          <div className={classes.container}>
-            <span className={classes.title}>Autor:</span>
-            <span className={classes.text}>
-              Jose Enmanuel Estrella 2-16-0823
-            </span>
-          </div>
-          <div className={classes.container}>
-            <span className={classes.title}>Lenguaje:</span>
-            <span className={classes.text}>JavaScript</span>
-          </div>
+          <h3 style={{ textTransform: 'uppercase' }}>analizador semantico</h3>
         </div>
       </Box>
       <div style={{ margin: 50 }}>
@@ -65,7 +46,12 @@ const Form = ({ setData, setDataConvert, setDataConvertLexico }) => {
           />
         </div>
         <div style={{ marginTop: 10 }}>
-          <Button variant="contained" onClick={getResult}>
+          <Button
+            variant="contained"
+            onClick={() =>
+              setDataConvertSemantica(getIdentifierSemantico(codigo))
+            }
+          >
             Analizar
           </Button>
         </div>
@@ -74,4 +60,4 @@ const Form = ({ setData, setDataConvert, setDataConvertLexico }) => {
   );
 };
 
-export default Form;
+export default FormSemantico;

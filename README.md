@@ -1,7 +1,14 @@
-# Analizador Sintactico
- Analiza código de javaScript para verificar si hay errores de sintaxis e indicar el error y dar soluciones.
+# Pequeño Compilador
+
+Desarrollado en javaScript con el objetivo de poner estas parte en 1:
+
+- Analizador Léxico.
+- Analizador Sintáctico.
+- Analizador Semántico.
+- Generador de Código Intermedio.
 
 ## Setup
+
 - git clone https://github.com/EnmanuelEstrella22/Analizador-Sintactico.git
 - npm install
 - npm start

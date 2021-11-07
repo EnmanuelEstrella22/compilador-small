@@ -21,13 +21,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ConsolaSintactica = ({ codigo }) => {
+const ConsolaSemantica = ({ codigo }) => {
   const classes = useStyles();
   return (
     <>
       <Box display="flex" justifyContent="center" alignItems="center">
         <div>
-          <h4>CONSOLA SINTÁCTICA</h4>
+          <h4>CONSOLA SEMANTICA</h4>
         </div>
       </Box>
         <div>
@@ -46,4 +46,4 @@ const ConsolaSintactica = ({ codigo }) => {
   );
 };
 
-export default ConsolaSintactica;
+export default ConsolaSemantica;

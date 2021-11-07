@@ -9,10 +9,10 @@ const getIdentifier = (code) => {
 
   const regxConst = /const ([a-zA-Z]+)( = )([0-9]+)(;)$/g;
   const regxLetOrVar = /(var|let) ([a-zA-Z]+)(;|(( = )([0-9]+);))$/g;
-  const regxFunction = /function ([a-zA-Z]+ )((\(\))|(\([a-zA-Z]+\))) {$/g;
-  const regxIf = /if \(.+\) {$/g;
-  const regxElse = /else {$/g;
-  const regxConsole = /console.log\(.\);$/g;
+  const regxFunction = /function ([a-zA-Z]+)((\(\))|(\([a-zA-Z]+\))) {$/g;
+  const regxIf = /if\(.+\) {$/g;
+  const regxElse = /} else {$/g;
+  const regxConsole = /console.log\( .+ \);$/g;
   const regxWhile = /while \(.+\) {$/g;
 
   let identificador = '';
@@ -101,6 +101,7 @@ const getIdentifier = (code) => {
 
     // Si es un console.log
     if (getCodeCad[i].includes('console')) {
+      console.log(getCodeCad[i],getCode[i] )
       if (!getCode[i].match(regxConsole)) {
         textErrors += `Error linea ${cont}, solucion: console.log(value);\n`;
       }
@@ -125,7 +126,7 @@ const getIdentifier = (code) => {
   if (llavesI > llavesD) {
     textErrors += `Error, faltan ${llavesI - llavesD}  '}'  de cierre.\n`;
   } else if (llavesD > llavesI) {
-    textErrors += `Error, faltan ${llavesD - llavesI}  '{'  de cierre.\n`;
+    textErrors += `Error, faltan ${llavesD - llavesI}  '{'  de apertura.\n`;
   }
 
   return textErrors;
